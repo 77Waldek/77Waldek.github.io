@@ -1,7 +1,20 @@
-<html> <head> <title>Klan 77Waldek</title> </head>
+<html>
+<head>
+<title>Klan 77Waldek</title>
+<style>
+body {
+background: black;
+color: white;
+font-family: Arial;
+text-align: center;
+}
+h1 { color: red; }
+img { width: 250px; margin: 20px; }
+</style>
+</head>
 <body>
 <h1>Witaj w klanie!</h1>
 <img src="ZCL LOGO.jpg" alt="nasze logo">
-<p>Członkowie: 77Waldek HusarGP </p>
+<p>Członkowie: 77Waldek, HusarGP</p>
 </body>
 </html>
