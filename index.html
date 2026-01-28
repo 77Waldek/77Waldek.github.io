@@ -19,8 +19,6 @@ gap: 30px;
 margin: 40px 0;
 }
 .kafel { 
-background: #333;
-border: 2px solid #f00;
 width: 150px; 
 height: 150px; 
 position: relative;
@@ -33,14 +31,14 @@ content: '';
 position: absolute;
 top: 0; left: 0;
 width: 100%; height: 100%;
-background-size: cover;
-background-position: center;
-z-index: 1;
-transition: 0.1s;
-}
-.kafel:hover::before {
 background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+filter: blur(1px);
+z-index: 1;
+transition: filter 0.1s;
 }
+.kafel:hover::before { filter: none; }
 .kafel:hover {
 box-shadow: 0 0 20px red;
 transform: scale(1.05);
@@ -50,7 +48,13 @@ margin: 50px auto;
 max-width: 700px;
 display: none;
 }
-.opis.aktywny { display: block; padding: 20px; background: #222; border: 1px solid red; }
+.opis.aktywny { 
+display: block; 
+padding: 20px; 
+background: #222; 
+border: 1px solid red; 
+color: white;
+}
 </style>
 </head>
 <body>
@@ -59,22 +63,25 @@ display: none;
 <p>Członkowie: 77Waldek, HusarGP</p>
 
 <div class="kafelki">
-<a href="#wot" onclick="document.getElementById('wot').classList.toggle('aktywny');" class="kafel" style="background-image:url('https://makeagif.com/gif/super-intro-world-of-tanks-wot-fNmjXh.gif');"></a>
-<a href="#lol" onclick="document.getElementById('lol').classList.toggle('aktywny');" class="kafel" style="background-image:url('https://www.pinterest.com/pin/lol-league-of-legends-logo-gif--353532639515241482/');"></a>
-<a href="#pubg" onclick="document.getElementById('pubg').classList.toggle('aktywny');" class="kafel" style="background-image:url('https://makeagif.com/gif/pubg-e3-2018-official-trailer-xMPcxa.gif');"></a>
+<a href="#wot" onclick="document.getElementById('wot').classList.toggle('aktywny');" 
+class="kafel" style="background-image:url('BLITZ2.gif');"></a>
+<a href="#lol" onclick="document.getElementById('lol').classList.toggle('aktywny');" 
+class="kafel" style="background-image:url('LOL3.gif');"></a>
+<a href="#pubg" onclick="document.getElementById('pubg').classList.toggle('aktywny');" 
+class="kafel" style="background-image:url('PUGB1.gif');"></a>
 </div>
 
 <div id="wot" class="opis">
 <h2>World of Tanks Blitz</h2>
-<p>Tutaj wpisz opis gry – jak chcesz.</p>
+<p></p>
 </div>
 <div id="lol" class="opis">
 <h2>League of Legends</h2>
-<p>Tutaj wpisz opis gry – jak chcesz.</p>
+<p></p>
 </div>
 <div id="pubg" class="opis">
 <h2>PUBG: Battlegrounds</h2>
-<p>Tutaj wpisz opis gry – jak chcesz.</p>
+<p></p>
 </div>
 
 </body>
