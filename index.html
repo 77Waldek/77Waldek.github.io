@@ -15,45 +15,51 @@ img { width: 250px; margin: 20px; }
 .kafelki {
 display: flex;
 justify-content: center;
-gap: 30px;
+gap: 40px;
 margin: 40px 0;
 }
-.kafel { 
-width: 150px; 
-height: 150px; 
+.kafel {
+width: 350px;
+height: 150px;
 position: relative;
-overflow: hidden;
 cursor: pointer;
-transition: all 0.3s ease;
+overflow: hidden;
+background: #111;
+border: 2px solid red;
+transition: height 0.5s, background 0.2s;
 }
-.kafel::before {
-content: '';
+.kafel .tekst {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+font-size: 28px;
+font-weight: bold;
+z-index: 2;
+text-shadow: 0 0 5px black;
+}
+.kafel .gif {
 position: absolute;
 top: 0; left: 0;
 width: 100%; height: 100%;
 background-size: contain;
-background-position: center;
 background-repeat: no-repeat;
-filter: blur(1px);
+background-position: center;
 z-index: 1;
-transition: filter 0.1s;
+opacity: 0;
+transition: opacity 0.4s;
 }
-.kafel:hover::before { filter: none; }
 .kafel:hover {
-box-shadow: 0 0 20px red;
-transform: scale(1.05);
+background: transparent;
+height: 350px;
 }
+.kafel:hover .gif { opacity: 1; }
+.kafel:hover .tekst { display: none; }
 .opis {
-margin: 50px auto;
-max-width: 700px;
-display: none;
-}
-.opis.aktywny { 
-display: block; 
-padding: 20px; 
-background: #222; 
-border: 1px solid red; 
-color: white;
+margin-top: 10px;
+font-size: 16px;
+color: #ccc;
 }
 </style>
 </head>
@@ -63,26 +69,23 @@ color: white;
 <p>Członkowie: 77Waldek, HusarGP</p>
 
 <div class="kafelki">
-<a href="#wot" onclick="document.getElementById('wot').classList.toggle('aktywny');" 
-class="kafel" style="background-image:url('BLITZ2.gif');"></a>
-<a href="#lol" onclick="document.getElementById('lol').classList.toggle('aktywny');" 
-class="kafel" style="background-image:url('LOL3.gif');"></a>
-<a href="#pubg" onclick="document.getElementById('pubg').classList.toggle('aktywny');" 
-class="kafel" style="background-image:url('PUGB1.gif');"></a>
+<div class="kafel">
+<span class="tekst">World of Tanks Blitz</span>
+<div class="gif" style="background-image: url('BLITZ2.gif');"></div>
+<div class="opis">Twoja opis gry Blitz tutaj.</div>
 </div>
 
-<div id="wot" class="opis">
-<h2>World of Tanks Blitz</h2>
-<p></p>
-</div>
-<div id="lol" class="opis">
-<h2>League of Legends</h2>
-<p></p>
-</div>
-<div id="pubg" class="opis">
-<h2>PUBG: Battlegrounds</h2>
-<p></p>
+<div class="kafel">
+<span class="tekst">League of Legends</span>
+<div class="gif" style="background-image: url('LOL3.gif');"></div>
+<div class="opis">Twoja opis gry LoL tutaj.</div>
 </div>
 
+<div class="kafel">
+<span class="tekst">PUBG: Battlegrounds</span>
+<div class="gif" style="background-image: url('PUGB1.gif');"></div>
+<div class="opis">Twoja opis gry PUBG tutaj.</div>
+</div>
+</div>
 </body>
 </html>
