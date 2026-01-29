@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pl">
 <head>
-  <title>Klan 77Waldek</title>
+  <title>Klan ZCL</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="LOGO ZCL.png" type="image/png">
 
   <style>
     body {
-      background: url('BG.jpg') no-repeat center center fixed;
+      background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
       font-family: Arial, Helvetica, sans-serif;
@@ -20,11 +20,12 @@
     h2 { color: #ccc; }
     img { width: 250px; margin: 20px; }
     
+    /* Kafelki gier */
     .kafelki {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin: 40px 0;
+      margin: 60px 0 40px;
     }
     .kafel {
       width: 350px;
@@ -37,6 +38,7 @@
       transition: height 0.5s, background 0.2s;
       text-decoration: none;
       color: inherit;
+      display: block;
     }
     .kafel .tekst {
       position: absolute;
@@ -65,25 +67,36 @@
     }
     .kafel:hover .gif { opacity: 1; }
     .kafel:hover .tekst { display: none; }
-    
+
+    /* Tabela członków – lewo u góry */
+    .czlonkowie {
+      margin: 15px 0 50px 30px;
+      text-align: left;
+      max-width: 450px;
+    }
+    .czlonkowie h2 {
+      margin: 0 0 12px 0;
+      font-size: 24px;
+      color: #ff4444;
+    }
     table {
-      margin-left: 20px;
-      border-collapse: collapse;
-      width: 40%;
-      max-width: 400px;
+      background: rgba(30, 30, 30, 0.9);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #444;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
     }
     td {
-      padding: 12px 20px;
-      border-bottom: 1px solid #444;
-      text-align: left;
+      padding: 14px 24px;
+      border-bottom: 1px solid #333;
     }
     tr:first-child {
       background: #222;
-      color: #ff4444;
+      color: #ff6666;
       font-weight: bold;
     }
     tr:hover {
-      background: #333;
+      background: #2a2a2a;
     }
     tr a {
       color: white;
@@ -97,17 +110,23 @@
 
   <h1>Witaj w klanie!</h1>
   <img src="LOGO ZCL.png" alt="nasze logo">
-  
-  <!-- Tabela członków – lewa strona, góra -->
-  <h2 style="text-align: left; margin: 20px 0 10px 20px; color: #ccc;">Członkowie klanu</h2>
-  <table>
-    <tr><td>Nick</td><td>Rola</td></tr>
-    <tr><td><a href="77Waldek.html">77Waldek</a></td><td>Lider</td></tr>
-    <tr><td><a href="HusarGP.html">HusarGP</a></td><td>Zastępca</td></tr>
-  </table>
 
-  <!-- Gry – kafelki -->
-  <p>Członków: 77Waldek, HusarGP</p>
+  <!-- Tabela członków – po lewej, u góry -->
+  <div class="czlonkowie">
+    <h2>Członkowie klanu</h2>
+    <table>
+      <tr><td>Nick</td><td>Rola</td></tr>
+      <tr><td><a href="77Waldek.html">77Waldek</a></td><td>Lider</td></tr>
+      <tr><td><a href="HusarGP.html">HusarGP</a></td><td>Zastępca</td></tr>
+      <tr><td>-</td><td>-</td></tr>
+      <tr><td>-</td><td>-</td></tr>
+      <tr><td>-</td><td>-</td></tr>
+      <tr><td>-</td><td>-</td></tr>
+      <tr><td>-</td><td>-</td></tr>
+    </table>
+  </div>
+
+  <!-- Kafelki gier -->
   <div class="kafelki">
     <a href="blitz.html" class="kafel">
       <span class="tekst">World of Tanks Blitz</span>
