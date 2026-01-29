@@ -16,37 +16,44 @@
       padding: 20px;
     }
 
-    /* Nagłówek – logo + tabela obok */
+    /* Nagłówek – tabela lewo, logo środek */
     .header {
       display: flex;
       align-items: flex-start;
-      justify-content: center;
-      gap: 40px;
+      justify-content: space-between; /* daje przestrzeń */
       flex-wrap: wrap;
       margin-bottom: 40px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .logo-wrapper {
-      text-align: center;
-    }
-    h1 {
-      color: red;
-      text-shadow: 2px 2px 5px black;
-      margin: 10px 0;
-    }
-    img {
-      width: 250px;
-    }
-
-    /* Tabela członków */
     .czlonkowie {
       width: 380px;
       text-align: left;
+      margin-left: 0; /* mocniej lewo */
     }
     .czlonkowie h2 {
       margin: 0 0 10px 0;
       font-size: 24px;
       color: #ff4444;
     }
+    .logo-wrapper {
+      flex: 1;
+      text-align: center;
+      min-width: 250px;
+      margin: 0 20px;
+    }
+    h1 {
+      color: red;
+      text-shadow: 2px 2px 5px black;
+      margin: 10px 0;
+      font-size: 48px;
+    }
+    img {
+      width: 250px;
+    }
+
+    /* Tabela członków */
     table {
       background: rgba(30, 30, 30, 0.9);
       border-radius: 12px;
@@ -73,12 +80,14 @@
     }
     tr a:hover { color: #ff4444; }
 
-    /* Kafelki gier – pod nagłówkiem */
+    /* Kafelki gier */
     .kafelki {
       display: flex;
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .kafel {
       width: 350px;
@@ -103,14 +112,11 @@
       z-index: 2;
       text-shadow: 0 0 5px black;
     }
-    .kafel .gif {
+    .kafel video {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 1;
+      object-fit: cover;
       opacity: 0;
       transition: opacity 0.4s;
     }
@@ -118,7 +124,7 @@
       background: transparent;
       height: 350px;
     }
-    .kafel:hover .gif { opacity: 1; }
+    .kafel:hover video { opacity: 1; }
     .kafel:hover .tekst { display: none; }
   </style>
 </head>
@@ -148,15 +154,21 @@
   <div class="kafelki">
     <a href="blitz.html" class="kafel">
       <span class="tekst">World of Tanks Blitz</span>
-      <div class="gif" style="background-image: url('BLITZ2.gif');"></div>
+      <video autoplay loop muted playsinline>
+        <source src="BLITZ2.mp4" type="video/mp4">
+      </video>
     </a>
     <a href="lol.html" class="kafel">
       <span class="tekst">League of Legends</span>
-      <div class="gif" style="background-image: url('LOL3.gif');"></div>
+      <video autoplay loop muted playsinline>
+        <source src="LOL3.mp4" type="video/mp4">
+      </video>
     </a>
     <a href="pubg.html" class="kafel">
       <span class="tekst">PUBG: Battlegrounds</span>
-      <div class="gif" style="background-image: url('PUGB1.gif');"></div>
+      <video autoplay loop muted playsinline>
+        <source src="PUGB1.mp4" type="video/mp4">
+      </video>
     </a>
   </div>
 
