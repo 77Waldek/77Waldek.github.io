@@ -22,15 +22,17 @@
       margin: 0 auto;
       background: rgba(20, 20, 20, 0.88);
       border-radius: 12px;
-      padding: 30px;
+      padding: 30px 30px 30px 30px; /* górny padding zostaje, ale tabela i tak wyżej */
       border: 1px solid #333;
+      position: relative;
     }
 
     .header {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      justify-content: flex-end;     /* max na prawo */
+      align-items: flex-start;       /* max u góry */
       margin-bottom: 40px;
+      margin-top: -10px;             /* lekko podciąga w górę */
     }
 
     h1 {
@@ -38,19 +40,21 @@
       text-shadow: 3px 3px 10px black;
       font-size: 52px;
       margin: 0;
+      align-self: flex-start;
     }
 
     .info-table {
-      width: 280px;                 /* mniejsze, ale długie */
+      width: 280px;
       background: rgba(40, 40, 40, 0.9);
       border: 1px solid #ff4444;
       border-radius: 8px;
       overflow: hidden;
-      font-size: 13px;              /* mniejsze litery */
+      font-size: 13px;
+      margin-top: 0;                 /* zero odstępu od góry */
     }
 
     .info-table td {
-      padding: 8px 12px;            /* trochę mniej miejsca */
+      padding: 8px 12px;
       border-bottom: 1px solid #444;
     }
 
