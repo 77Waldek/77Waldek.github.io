@@ -14,16 +14,19 @@
       color: white;
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      padding: 30px;
+      padding: 40px 20px 40px 100px;   /* dużo miejsca z lewej, mało z prawej */
     }
 
     .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: rgba(20, 20, 20, 0.88);
-      border-radius: 12px;
-      padding: 30px;
-      border: 1px solid #333;
+      width: 100%;
+      max-width: 1100px;                 /* możesz zwiększyć do 1200–1400 px jeśli chcesz szerszy blok */
+      margin-left: auto;                 /* ← to przesuwa cały kontener maksymalnie na prawo */
+      margin-right: 0;
+      background: rgba(18, 18, 22, 0.90);
+      border-radius: 14px;
+      padding: 35px 40px;
+      border: 1px solid #2a2a2a;
+      box-shadow: -12px 0 40px rgba(0,0,0,0.85);
       position: relative;
     }
 
@@ -31,44 +34,68 @@
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
 
     h1 {
       color: #ff4444;
-      text-shadow: 3px 3px 10px black;
-      font-size: 52px;
-      margin: 0 30px 0 0;  /* odstęp od tabeli, żeby h1 nie siedział na niej */
+      text-shadow: 4px 4px 12px black;
+      font-size: 54px;
+      margin: 0 35px 0 0;
+      letter-spacing: -1px;
     }
 
     .info-table {
-      width: 220px;              /* ciasno, dopasowane */
-      background: rgba(40, 40, 40, 0.9);
+      width: 230px;
+      background: rgba(35, 35, 40, 0.92);
       border: 1px solid #ff4444;
-      border-radius: 8px;
+      border-radius: 9px;
       overflow: hidden;
-      font-size: 12px;           /* małe, konkretne */
+      font-size: 13px;
+      box-shadow: 0 2px 8px rgba(255,68,68,0.15);
     }
 
     .info-table td {
-      padding: 6px 10px;         /* minimum miejsca */
-      border-bottom: 1px solid #444;
+      padding: 7px 12px;
+      border-bottom: 1px solid #3a3a3a;
     }
 
     .info-table tr:first-child {
-      background: #222;
+      background: #1e1e1e;
       color: #ff6666;
       font-weight: bold;
     }
 
     .opis {
       font-size: 20px;
-      line-height: 1.5;
+      line-height: 1.65;
       text-align: justify;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+
+      margin-left: auto;
+      margin-right: 0;
+      width: 62%;                        /* możesz zmniejszyć do 55–58% jeśli chcesz jeszcze mocniej w prawo */
+      max-width: 780px;
+
+      background: rgba(10, 10, 18, 0.96);
+      padding: 30px 36px;
+      border-left: 6px solid #ff4444;
+      border-radius: 10px 0 0 10px;
+      box-shadow: -8px 0 20px rgba(0,0,0,0.7);
     }
 
-    .opis strong { color: #ff6666; }
+    .opis strong {
+      color: #ff6666;
+      font-weight: 700;
+    }
+
+    .opis p {
+      margin: 0 0 1.3em 0;
+    }
+
+    .opis p:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
