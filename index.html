@@ -10,19 +10,10 @@
       background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
-      color: #fff;
+      color: white;
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 20px;
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.50);
-      z-index: -1;
     }
 
     .header {
@@ -34,104 +25,104 @@
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
-      gap: 40px;
     }
 
-    .czlonkowie, .honorowi {
-      width: 420px;
-      background: rgba(240, 240, 255, 0.88);
-      color: #111;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
-      border: 1px solid rgba(180,180,220,0.7);
+    .czlonkowie {
+      width: 380px;
+      text-align: left;
     }
 
-    .honorowi {
-      border: 2px solid #ffd700;
-      box-shadow: 0 0 20px rgba(255,215,0,0.4);
-    }
-
-    .sekcja-tytul {
-      background: linear-gradient(135deg, #444 0%, #222 100%);
-      color: #ffdd44;
-      padding: 14px 20px;
-      margin: 0;
-      font-size: 22px;
-      text-align: center;
-      text-shadow: 1px 1px 3px black;
-      border-bottom: 2px solid #ffd700;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    td {
-      padding: 14px 20px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    tr th, tr td:first-child {
+    .czlonkowie h2 {
+      margin: 0 0 15px 0;
+      font-size: 26px;
       font-weight: bold;
-      color: #d00000;
-    }
-
-    tr:hover {
-      background: rgba(220,220,255,0.4);
+      text-align: center;
+      padding: 12px 0;
+      background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+      border-radius: 10px;
+      border: 2px solid #c9a347;
+      color: #ffd700;
+      text-shadow: 
+        0 0 10px #ffcc00,
+        2px 2px 6px black,
+        -1px -1px 4px #8b6914;
+      letter-spacing: 1.2px;
     }
 
     .logo-wrapper {
+      flex: 0 0 auto;
       text-align: center;
-      min-width: 280px;
+      min-width: 260px;
+      margin: 0 40px;
     }
 
     h1 {
-      color: #ff4444;
-      text-shadow: 3px 3px 8px black;
+      color: #ff3333;
+      text-shadow: 3px 3px 10px black;
       margin: 15px 0 5px;
       font-size: 52px;
     }
 
     img {
       width: 260px;
-      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.7));
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.8));
     }
 
-    /* KAFELEK – tylko jeden, video od razu widoczne */
+    table {
+      background: rgba(25, 25, 25, 0.92);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #444;
+      box-shadow: 0 5px 18px rgba(200, 0, 0, 0.25);
+      width: 100%;
+    }
+
+    td {
+      padding: 14px 22px;
+      border-bottom: 1px solid #333;
+    }
+
+    tr:first-child {
+      background: #1f1f1f;
+      color: #ff7777;
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background: #2f2f2f;
+    }
+
+    tr a {
+      color: #eee;
+      text-decoration: none;
+      display: block;
+    }
+
+    tr a:hover {
+      color: #ff5555;
+    }
+
+    /* ─────────────── NOWY STYL KAFLA ─────────────── */
     .kafelki {
       display: flex;
       justify-content: center;
       max-width: 1200px;
-      margin: 0 auto 60px;
+      margin: 0 auto;
     }
 
     .kafel {
-      width: 520px;
-      height: 380px;
+      width: 480px;
+      height: 270px;
       position: relative;
       overflow: hidden;
-      background: #000;
-      border: 3px solid #c80000;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(200,0,0,0.4);
-      transition: all 0.4s ease;
+      border: 3px solid #c00;
+      box-shadow: 0 8px 30px rgba(180, 0, 0, 0.5);
+      background: #0a0a0a;
+      transition: all 0.35s ease;
+      cursor: pointer;
       text-decoration: none;
       color: white;
-    }
-
-    .kafel video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 1;
     }
 
     .kafel .tekst {
@@ -140,55 +131,64 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 42px;
+      font-size: 38px;
       font-weight: bold;
       text-shadow: 3px 3px 12px black;
-      background: rgba(0,0,0,0.35);
-      z-index: 2;
-      transition: opacity 0.5s;
-      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+      z-index: 3;
+      transition: opacity 0.4s ease;
+    }
+
+    .kafel video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.35s ease;
     }
 
     .kafel:hover {
       transform: scale(1.04);
-      box-shadow: 0 15px 40px rgba(200,0,0,0.7);
+      box-shadow: 0 12px 40px rgba(220, 0, 0, 0.7);
+      border-color: #ff4444;
     }
 
     .kafel:hover .tekst {
       opacity: 0;
     }
 
-    /* reset video po najechaniu – odtwarza od nowa */
     .kafel:hover video {
-      opacity: 0;
-      animation: none;
+      opacity: 1;
     }
 
-    .kafel:hover video {
-      animation: restart 0.01s forwards;
-    }
-
-    @keyframes restart {
-      0%   { opacity: 0; }
-      100% { opacity: 1; }
+    /* Restart filmu po każdym najechaniu */
+    .kafel video {
+      /* To jest kluczowe – resetujemy currentTime przy każdym najechaniu */
     }
 
     @media (max-width: 900px) {
-      .header { flex-direction: column; align-items: center; }
-      .czlonkowie, .honorowi { width: 100%; max-width: 500px; }
-      .kafel { width: 90vw; height: 280px; }
-      .kafel .tekst { font-size: 32px; }
+      .kafel { width: 90vw; height: 220px; }
+      .kafel .tekst { font-size: 28px; }
       h1 { font-size: 42px; }
+      .header { flex-direction: column; align-items: center; gap: 30px; }
+      .czlonkowie { width: 100%; max-width: 500px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <div class="honorowi">
-      <h2 class="sekcja-tytul">Honorowi Członkowie Klanu</h2>
+    <div class="czlonkowie">
+      <h2>Gwardia Narodowa</h2>
       <table>
+        <tr><td>Nick</td><td>Rola</td></tr>
+        <tr><td><a href="77Waldek.html">77Waldek</a></td><td>Lider</td></tr>
+        <tr><td><a href="HusarGP.html">HusarGP</a></td><td>Zastępca</td></tr>
         <tr><td>NatanCard</td><td>Honorowy Lis</td></tr>
+        <tr><td>-</td><td>-</td></tr>
+        <tr><td>-</td><td>-</td></tr>
       </table>
     </div>
 
@@ -196,27 +196,32 @@
       <img src="LOGO ZCL.png" alt="Logo ZCL">
       <h1>Witaj w klanie!</h1>
     </div>
-
-    <div class="czlonkowie">
-      <h2 class="sekcja-tytul">Członkowie klanu</h2>
-      <table>
-        <tr><td>Nick</td><td>Rola</td></tr>
-        <tr><td><a href="77Waldek.html">77Waldek</a></td><td>Lider</td></tr>
-        <tr><td><a href="HusarGP.html">HusarGP</a></td><td>Zastępca</td></tr>
-        <tr><td>-</td><td>-</td></tr>
-        <tr><td>-</td><td>-</td></tr>
-      </table>
-    </div>
   </div>
 
   <div class="kafelki">
-    <a href="blitz.html" class="kafel">
+    <a href="blitz.html" class="kafel" id="blitz-kafelek">
       <span class="tekst">World of Tanks Blitz</span>
-      <video autoplay loop muted playsinline>
+      <video id="blitz-video" loop muted playsinline>
         <source src="BLITZ2.mp4" type="video/mp4">
       </video>
     </a>
   </div>
+
+  <script>
+    // Restart filmu za każdym razem gdy najedziemy myszką
+    const kafel = document.getElementById('blitz-kafelek');
+    const video = document.getElementById('blitz-video');
+
+    kafel.addEventListener('mouseenter', () => {
+      video.currentTime = 0;     // reset do początku
+      video.play();              // na wszelki wypadek
+    });
+
+    // Opcjonalnie – pauzujemy po zjechaniu (oszczędność zasobów)
+    kafel.addEventListener('mouseleave', () => {
+      video.pause();
+    });
+  </script>
 
 </body>
 </html>
