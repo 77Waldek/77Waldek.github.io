@@ -20,7 +20,6 @@
       font-family: Arial, Helvetica, sans-serif;
       overflow-x: hidden;
     }
-
     .clan-header {
       text-align: center;
       padding: 80px 20px 140px;
@@ -60,15 +59,15 @@
         opacity: 1;
       }
     }
-
     .container {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: flex-start;
-      padding: 0 40px 80px;
-      margin-top: -120px;
-      gap: 30px;
+      padding: 0 20px;
+      margin-top: -100px;
+      gap: 20px;
       flex-wrap: wrap;
+      max-width: 100%;
     }
     .box {
       background: rgba(20,20,20,0.93);
@@ -77,8 +76,14 @@
       box-shadow: 0 0 28px rgba(255,120,0,0.55);
       backdrop-filter: blur(6px);
       width: 100%;
-      max-width: 440px;
+      max-width: 420px;
       border: 1px solid rgba(255, 140, 0, 0.45);
+    }
+    .czlonkowie {
+      margin-left: 0;
+    }
+    .opis {
+      margin-right: 0;
     }
     h2 {
       margin: 0 0 22px;
@@ -86,7 +91,6 @@
       color: #ff8800;
       text-shadow: 0 1px 6px #000;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
@@ -102,7 +106,6 @@
       width: 55%;
     }
     tr:last-child td { border-bottom: none; }
-
     p {
       margin: 0 0 16px;
       line-height: 1.6;
@@ -125,7 +128,6 @@
       color: #ff8800;
       font-size: 1.3em;
     }
-
     .discord-btn {
       display: inline-block;
       background: linear-gradient(135deg, #ff7700, #ffaa00);
@@ -142,14 +144,20 @@
       transform: translateY(-5px) scale(1.06);
       box-shadow: 0 0 45px rgba(255,140,0,1);
     }
-
     @media (max-width: 950px) {
       .container {
         justify-content: center;
-        padding: 20px;
+        padding: 0 20px;
         margin-top: -60px;
       }
-      .box { max-width: 92%; }
+      .box {
+        max-width: 90%;
+        margin: 0 auto 30px;
+      }
+      .czlonkowie, .opis {
+        margin-left: auto;
+        margin-right: auto;
+      }
       .neon-title { font-size: 3.8rem; }
     }
     @media (max-width: 600px) {
@@ -163,13 +171,17 @@
   <div class="clan-header">
     <h1 class="neon-title">Załoga Cwanych Lisów</h1>
   </div>
-
   <div class="container">
     <div class="box czlonkowie">
       <h2>Członkowie</h2>
       <table>
         <tr><td>77Waldek</td><td>Lider</td></tr>
         <tr><td>HusarGP</td><td>Zastępca</td></tr>
+        <tr><td>NatanCard</td><td>Honorowy Lis</td></tr>
+        <tr><td>Sawatatrik</td><td>PanzerFox</td></tr>
+        <tr><td>PREZEStoJA</td><td>PanzerFox</td></tr>
+        <tr><td>Kgorska373</td><td>PanzerFox</td></tr>
+        <tr><td>Toblet_Sigma</td><td>PanzerFox</td></tr>
       </table>
     </div>
 
@@ -179,7 +191,7 @@
         <strong>Witaj!</strong><br>
         Potrzebujemy graczy do naszego klanu 😈
       </p>
-    
+   
       <p>Nie wymagamy wiele:</p>
       <ul>
         <li>Wystarczy, że będziesz wbijał punkty w misjach klanowych</li>
@@ -187,11 +199,10 @@
         <li>Mamy mały personel – możesz być spokojny</li>
         <li>Najważniejsza jest miła atmosfera</li>
       </ul>
-    
+   
       <p style="font-weight: bold; color: #ffcc99; font-size: 1.15em; text-align: center; margin: 20px 0;">
         Gram dla frajdy, nie na siłę – wpadaj śmiało!
       </p>
-
       <div style="text-align: center; margin: 45px 0 25px;">
         <a href="https://discord.gg/5MNZZfh5" target="_blank" class="discord-btn">
           Dołącz na Discordzie 🐺
@@ -200,7 +211,7 @@
           Pogaduchy, screeny i rekrutacja – tu się dzieje!
         </p>
       </div>
-    
+   
       <p style="margin-top: 25px; text-align: center; font-size: 1.05em;">
         Kontakt: Discord /77Waldek<br>lub wiadomość w grze
       </p>
