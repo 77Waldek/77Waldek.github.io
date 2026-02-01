@@ -15,7 +15,6 @@
       margin: 0;
       padding: 20px;
     }
-
     .header {
       display: flex;
       align-items: flex-start;
@@ -26,12 +25,10 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     .czlonkowie {
       width: 380px;
       text-align: left;
     }
-
     .czlonkowie h2 {
       margin: 0 0 15px 0;
       font-size: 26px;
@@ -42,32 +39,28 @@
       border-radius: 10px;
       border: 2px solid #c9a347;
       color: #ffd700;
-      text-shadow: 
+      text-shadow:
         0 0 10px #ffcc00,
         2px 2px 6px black,
         -1px -1px 4px #8b6914;
       letter-spacing: 1.2px;
     }
-
     .logo-wrapper {
       flex: 0 0 auto;
       text-align: center;
       min-width: 260px;
       margin: 0 40px;
     }
-
     h1 {
       color: #ff3333;
       text-shadow: 3px 3px 10px black;
       margin: 15px 0 5px;
       font-size: 52px;
     }
-
     img {
       width: 260px;
       filter: drop-shadow(0 6px 12px rgba(0,0,0,0.8));
     }
-
     table {
       background: rgba(25, 25, 25, 0.92);
       border-radius: 12px;
@@ -76,32 +69,26 @@
       box-shadow: 0 5px 18px rgba(200, 0, 0, 0.25);
       width: 100%;
     }
-
     td {
       padding: 14px 22px;
       border-bottom: 1px solid #333;
     }
-
     tr:first-child {
       background: #1f1f1f;
       color: #ff7777;
       font-weight: bold;
     }
-
     tr:hover {
       background: #2f2f2f;
     }
-
     tr a {
       color: #eee;
       text-decoration: none;
       display: block;
     }
-
     tr a:hover {
       color: #ff5555;
     }
-
     /* ─────────────── NOWY STYL KAFLA ─────────────── */
     .kafelki {
       display: flex;
@@ -109,7 +96,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .kafel {
       width: 480px;
       height: 270px;
@@ -124,7 +110,6 @@
       text-decoration: none;
       color: white;
     }
-
     .kafel .tekst {
       position: absolute;
       inset: 0;
@@ -138,7 +123,6 @@
       z-index: 3;
       transition: opacity 0.4s ease;
     }
-
     .kafel video {
       position: absolute;
       inset: 0;
@@ -148,26 +132,17 @@
       opacity: 0;
       transition: opacity 0.35s ease;
     }
-
     .kafel:hover {
       transform: scale(1.04);
       box-shadow: 0 12px 40px rgba(220, 0, 0, 0.7);
       border-color: #ff4444;
     }
-
     .kafel:hover .tekst {
       opacity: 0;
     }
-
     .kafel:hover video {
       opacity: 1;
     }
-
-    /* Restart filmu po każdym najechaniu */
-    .kafel video {
-      /* To jest kluczowe – resetujemy currentTime przy każdym najechaniu */
-    }
-
     @media (max-width: 900px) {
       .kafel { width: 90vw; height: 220px; }
       .kafel .tekst { font-size: 28px; }
@@ -178,7 +153,6 @@
   </style>
 </head>
 <body>
-
   <div class="header">
     <div class="czlonkowie">
       <h2>Gwardia Narodowa</h2>
@@ -186,18 +160,16 @@
         <tr><td>Nick</td><td>Rola</td></tr>
         <tr><td><a href="77Waldek.html">77Waldek</a></td><td>Lider</td></tr>
         <tr><td><a href="HusarGP.html">HusarGP</a></td><td>Zastępca</td></tr>
-        <tr><td>NatanCard</td><td>Honorowy Lis</td></tr>
+        <tr><td><a href="natancard.html">NatanCard</a></td><td>Honorowy Lis</td></tr>
         <tr><td>-</td><td>-</td></tr>
         <tr><td>-</td><td>-</td></tr>
       </table>
     </div>
-
     <div class="logo-wrapper">
       <img src="LOGO ZCL.png" alt="Logo ZCL">
       <h1>Witaj w klanie!</h1>
     </div>
   </div>
-
   <div class="kafelki">
     <a href="blitz.html" class="kafel" id="blitz-kafelek">
       <span class="tekst">World of Tanks Blitz</span>
@@ -206,22 +178,18 @@
       </video>
     </a>
   </div>
-
   <script>
     // Restart filmu za każdym razem gdy najedziemy myszką
     const kafel = document.getElementById('blitz-kafelek');
     const video = document.getElementById('blitz-video');
-
     kafel.addEventListener('mouseenter', () => {
-      video.currentTime = 0;     // reset do początku
-      video.play();              // na wszelki wypadek
+      video.currentTime = 0; // reset do początku
+      video.play(); // na wszelki wypadek
     });
-
     // Opcjonalnie – pauzujemy po zjechaniu (oszczędność zasobów)
     kafel.addEventListener('mouseleave', () => {
       video.pause();
     });
   </script>
-
 </body>
 </html>
