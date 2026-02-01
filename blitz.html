@@ -4,218 +4,175 @@
   <title>Załoga Cwanych Lisów</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      padding: 0;
       min-height: 100vh;
-      background-color: #0a0a0a;
-      background-image: url('tlo-blitz.jpg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      background-attachment: fixed;
+      background: #0a0a0a url('tlo-blitz.jpg') center/cover fixed no-repeat;
       color: #f0f0ff;
       font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
     }
+
     .clan-header {
       text-align: center;
       padding: 80px 20px 140px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent);
+      background: linear-gradient(to bottom, rgba(0,0,0,.75), transparent);
     }
+
     .neon-title {
-      font-size: 4.8rem;
-      font-weight: bold;
-      margin: 0;
+      font-size: 4.5rem;
       color: #ff7700;
-      text-shadow:
-        0 0 10px #ff7700,
-        0 0 20px #ff7700,
-        0 0 40px #ff9900,
-        0 0 80px #ffaa00,
-        0 0 120px #ffbb00,
-        0 0 160px #ffcc00;
       letter-spacing: 5px;
-      animation: neon-pulse 2.8s ease-in-out infinite alternate;
+      text-shadow: 0 0 15px #ff7700, 0 0 40px #ffaa00;
+      animation: pulse 3s infinite alternate;
     }
-    @keyframes neon-pulse {
-      from {
-        text-shadow:
-          0 0 10px #ff7700,
-          0 0 20px #ff7700,
-          0 0 40px #ff9900,
-          0 0 80px #ffaa00;
-        opacity: 0.92;
-      }
-      to {
-        text-shadow:
-          0 0 18px #ff8800,
-          0 0 35px #ff9900,
-          0 0 70px #ffaa00,
-          0 0 110px #ffbb00,
-          0 0 150px #ffcc00;
-        opacity: 1;
-      }
+
+    @keyframes pulse {
+      from { opacity: .85; }
+      to { opacity: 1; }
     }
+
     .container {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 0 20px;
+      justify-content: center;
+      gap: 30px;
       margin-top: -100px;
-      gap: 20px;
+      padding: 20px;
       flex-wrap: wrap;
-      max-width: 100%;
     }
+
     .box {
-      background: rgba(20,20,20,0.93);
+      background: rgba(20,20,20,.95);
       border-radius: 14px;
       padding: 30px;
-      box-shadow: 0 0 28px rgba(255,120,0,0.55);
-      backdrop-filter: blur(6px);
+      box-shadow: 0 0 25px rgba(255,120,0,.6);
+      border: 1px solid rgba(255,140,0,.45);
+      max-width: 520px;
       width: 100%;
-      max-width: 420px;
-      border: 1px solid rgba(255, 140, 0, 0.45);
     }
-    .czlonkowie {
-      margin-left: 0;
-    }
-    .opis {
-      margin-right: 0;
-    }
+
     h2 {
-      margin: 0 0 22px;
-      font-size: 28px;
       color: #ff8800;
-      text-shadow: 0 1px 6px #000;
+      margin-bottom: 20px;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 16px;
     }
+
     td {
-      padding: 12px 8px;
+      padding: 10px 6px;
       border-bottom: 1px solid #444;
     }
+
     td:first-child {
       font-weight: bold;
       color: #ffcc99;
-      width: 55%;
     }
-    tr:last-child td { border-bottom: none; }
-    p {
-      margin: 0 0 16px;
-      line-height: 1.6;
-      font-size: 15px;
+
+    tr:last-child td {
+      border-bottom: none;
     }
-    ul {
-      margin: 12px 0 24px 20px;
-      padding-left: 0;
-      list-style: none;
-    }
-    ul li {
-      margin: 10px 0;
-      padding-left: 32px;
-      position: relative;
-    }
-    ul li::before {
-      content: "⚡";
-      position: absolute;
-      left: 4px;
-      color: #ff8800;
-      font-size: 1.3em;
-    }
-    .discord-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #ff7700, #ffaa00);
-      color: white;
-      padding: 15px 36px;
-      font-size: 1.25em;
+
+    .wn8 {
       font-weight: bold;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 0 28px rgba(255,120,0,0.85);
-      transition: all 0.3s;
+      text-align: right;
     }
-    .discord-btn:hover {
-      transform: translateY(-5px) scale(1.06);
-      box-shadow: 0 0 45px rgba(255,140,0,1);
+
+    .loading {
+      color: #aaa;
     }
-    @media (max-width: 950px) {
-      .container {
-        justify-content: center;
-        padding: 0 20px;
-        margin-top: -60px;
-      }
-      .box {
-        max-width: 90%;
-        margin: 0 auto 30px;
-      }
-      .czlonkowie, .opis {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .neon-title { font-size: 3.8rem; }
-    }
+
     @media (max-width: 600px) {
       .neon-title { font-size: 3rem; }
-      .clan-header { padding: 60px 15px 120px; }
-      .container { margin-top: -40px; }
     }
   </style>
 </head>
-<body>
-  <div class="clan-header">
-    <h1 class="neon-title">Załoga Cwanych Lisów</h1>
-  </div>
-  <div class="container">
-    <div class="box czlonkowie">
-      <h2>Członkowie</h2>
-      <table>
-        <tr><td>77Waldek</td><td>Lider</td></tr>
-        <tr><td>HusarGP</td><td>Zastępca</td></tr>
-        <tr><td>NatanCard</td><td>Honorowy Lis</td></tr>
-        <tr><td>Sawatatrik</td><td>PanzerFox</td></tr>
-        <tr><td>PREZEStoJA</td><td>PanzerFox</td></tr>
-        <tr><td>Kgorska373</td><td>PanzerFox</td></tr>
-        <tr><td>Toblet_Sigma</td><td>PanzerFox</td></tr>
-      </table>
-    </div>
 
-    <div class="box opis">
-      <h2>Clan in Game: Załoga Cwanych Lisów ^^</h2>
-      <p style="font-size: 1.1em; line-height: 1.7; margin-bottom: 24px;">
-        <strong>Witaj!</strong><br>
-        Potrzebujemy graczy do naszego klanu 😈
-      </p>
-   
-      <p>Nie wymagamy wiele:</p>
-      <ul>
-        <li>Wystarczy, że będziesz wbijał punkty w misjach klanowych</li>
-        <li>Jak na razie nie wyrzucamy za brak aktywności</li>
-        <li>Mamy mały personel – możesz być spokojny</li>
-        <li>Najważniejsza jest miła atmosfera</li>
-      </ul>
-   
-      <p style="font-weight: bold; color: #ffcc99; font-size: 1.15em; text-align: center; margin: 20px 0;">
-        Gram dla frajdy, nie na siłę – wpadaj śmiało!
-      </p>
-      <div style="text-align: center; margin: 45px 0 25px;">
-        <a href="https://discord.gg/5MNZZfh5" target="_blank" class="discord-btn">
-          Dołącz na Discordzie 🐺
-        </a>
-        <p style="margin-top: 16px; font-size: 0.95em; color: #bbbbff;">
-          Pogaduchy, screeny i rekrutacja – tu się dzieje!
-        </p>
-      </div>
-   
-      <p style="margin-top: 25px; text-align: center; font-size: 1.05em;">
-        Kontakt: Discord /77Waldek<br>lub wiadomość w grze
-      </p>
-    </div>
+<body>
+
+<div class="clan-header">
+  <h1 class="neon-title">Załoga Cwanych Lisów</h1>
+</div>
+
+<div class="container">
+  <div class="box">
+    <h2>Członkowie klanu (WN8 LIVE)</h2>
+    <table id="playersTable"></table>
   </div>
+</div>
+
+<script>
+/* ===== MAPOWANIE NICKÓW ===== */
+const players = [
+  { display: "77Waldek", blitz: "CEWaldek", role: "Lider" },
+  { display: "HusarGP", blitz: "Husar_2020", role: "Zastępca" },
+  { display: "NatanCard", blitz: "NatanCard", role: "Honorowy Lis" },
+  { display: "Sawatatrik", blitz: "Sawatatrik", role: "PanzerFox" },
+  { display: "PREZEStoJA", blitz: "PREZEStoJA", role: "PanzerFox" },
+  { display: "Kgorska373", blitz: "Kgorska373", role: "PanzerFox" },
+  { display: "Toblet_Sigma", blitz: "Toblet_Sigma", role: "PanzerFox" }
+];
+
+const table = document.getElementById("playersTable");
+
+/* ===== KOLORY WN8 ===== */
+function wn8Color(wn8) {
+  if (wn8 < 900) return "#999";
+  if (wn8 < 1400) return "#4caf50";
+  if (wn8 < 2000) return "#2196f3";
+  if (wn8 < 2600) return "#9c27b0";
+  return "#ff9800";
+}
+
+/* ===== RYSUJ TABELĘ ===== */
+players.forEach(p => {
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td>${p.display}</td>
+    <td>${p.role}</td>
+    <td class="wn8 loading" id="wn8-${p.blitz}">⏳</td>
+  `;
+  table.appendChild(row);
+});
+
+/* ===== POBIERANIE WN8 ===== */
+async function loadWN8(player) {
+  const el = document.getElementById(`wn8-${player.blitz}`);
+
+  try {
+    const res = await fetch(
+      `https://api.allorigins.win/raw?url=https://www.blitzstars.com/player/eu/${player.blitz}`
+    );
+    const text = await res.text();
+
+    const match = text.match(/WN8[^0-9]*([0-9]+)/i);
+    if (!match) throw "Brak WN8";
+
+    const wn8 = parseInt(match[1]);
+    el.textContent = wn8;
+    el.style.color = wn8Color(wn8);
+    el.classList.remove("loading");
+
+  } catch {
+    el.textContent = "—";
+    el.style.color = "#666";
+  }
+}
+
+/* ===== START + AUTO REFRESH ===== */
+function refreshAll() {
+  players.forEach(loadWN8);
+}
+
+refreshAll();
+setInterval(refreshAll, 300000); // co 5 minut
+</script>
+
 </body>
 </html>
