@@ -4,92 +4,126 @@
   <title>Klan ZCL – World of Tanks Blitz</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       padding: 0;
+      min-height: 100vh;
       background: url('TLO BLITZ.png') no-repeat center center fixed;
-      background-size: contain;
-      background-color: #111;
-      color: white;
+      background-size: cover;
+      background-color: #0a0a0a;
+      color: #f0f0ff;
       font-family: Arial, Helvetica, sans-serif;
-      height: 100vh;
-      overflow: auto;
+      overflow-x: hidden;
     }
-
-    .czlonkowie {
-      position: absolute;
-      top: 40px;
-      left: 40px;
-      width: 340px;
-      background: rgba(20,20,20,0.85);
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+    .box {
+      background: rgba(20,20,20,0.88);
       border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(255,0,0,0.4);
+      padding: 24px;
+      box-shadow: 0 0 20px rgba(220,20,20,0.45);
+      backdrop-filter: blur(4px);
+      max-width: 420px;
+      width: 100%;
     }
-
-    .czlonkowie h2 {
-      margin: 0 0 15px;
-      font-size: 24px;
+    h2 {
+      margin: 0 0 18px;
+      font-size: 26px;
       color: #ff4444;
+      text-shadow: 0 1px 4px #000;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
+      font-size: 16px;
     }
-
     td {
-      padding: 10px;
+      padding: 10px 8px;
       border-bottom: 1px solid #444;
     }
-
     td:first-child {
       font-weight: bold;
-      color: #ff7777;
+      color: #ff9999;
+      width: 55%;
     }
-
-    tr:last-child td {
-      border-bottom: none;
+    tr:last-child td { border-bottom: none; }
+    p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 15px;
     }
-
-    .opis {
+    ul {
+      margin: 10px 0 20px 20px;
+      padding-left: 0;
+      list-style: none;
+    }
+    ul li {
+      margin: 8px 0;
+      padding-left: 28px;
+      position: relative;
+    }
+    ul li::before {
+      content: "⚡";
       position: absolute;
-      top: 40px;
-      right: 40px;
-      width: 420px;
-      background: rgba(20,20,20,0.85);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(255,0,0,0.4);
-    }
-
-    .opis h2 {
-      margin: 0 0 15px;
-      font-size: 24px;
+      left: 4px;
       color: #ff4444;
     }
 
-    .opis p {
-      margin: 0;
-      line-height: 1.5;
+    @media (max-width: 850px) {
+      .container { 
+        flex-direction: column; 
+        align-items: center; 
+      }
+      .box { 
+        max-width: 95%; 
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="czlonkowie">
-    <h2>Członkowie</h2>
-    <table>
-      <tr><td>77Waldek</td><td>Lider</td></tr>
-      <tr><td>HusarGP</td><td>Zastępca</td></tr>
-    </table>
-  </div>
+  <div class="container">
 
-  <div class="opis">
-    <h2>Opis klanu</h2>
-    <p>Tu wstawisz opis klanu – np. historię, zasady, cele... na razie pusto. Możesz edytować potem.</p>
+    <div class="box czlonkowie">
+      <h2>Członkowie</h2>
+      <table>
+        <tr><td>77Waldek</td><td>Lider</td></tr>
+        <tr><td>HusarGP</td><td>Zastępca</td></tr>
+        <!-- dodawaj kolejne linie w miarę jak rośniesz -->
+      </table>
+    </div>
+
+    <div class="box opis">
+      <h2>Dołącz do ZCL! 🚀</h2>
+      <p style="font-size: 1.1em; line-height: 1.7; margin-bottom: 20px;">
+        <strong>Witaj!</strong><br>
+        Potrzebujemy graczy do naszego klanu 😈
+      </p>
+      
+      <p>Nie wymagamy wiele:</p>
+      <ul>
+        <li>Wystarczy, że będziesz wbijał punkty w misjach klanowych</li>
+        <li>Jak na razie nie wyrzucamy za brak aktywności</li>
+        <li>Mamy mały personel – możesz być spokojny, jeśli akurat nie będziesz miał czasu</li>
+        <li>Najważniejsza jest miła atmosfera</li>
+      </ul>
+      
+      <p style="font-weight: bold; color: #ff9999;">
+        Gram dla frajdy, nie na siłę – wpadaj śmiało!
+      </p>
+      
+      <p style="margin-top: 24px; text-align: center;">
+        Kontakt: Discord /77Waldek lub wiadomość w grze
+      </p>
+    </div>
+
   </div>
 
 </body>
