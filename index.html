@@ -5,16 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="LOGO ZCL.png" type="image/png">
-
   <style>
     body {
-      background: url('bg.jpg') no-repeat center center fixed; /* tu wrzuć swoje tło z lisem */
+      background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
-      color: white;
+      color: #fff;
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 20px;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.50);
+      z-index: -1;
     }
 
     .header {
@@ -22,152 +30,182 @@
       align-items: flex-start;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
+      gap: 40px;
     }
 
-    .czlonkowie {
-      width: 380px;
-      text-align: left;
-      margin-left: 0;
+    .czlonkowie, .honorowi {
+      width: 420px;
+      background: rgba(240, 240, 255, 0.88);
+      color: #111;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+      border: 1px solid rgba(180,180,220,0.7);
     }
 
-    .czlonkowie h2 {
-      margin: 0 0 10px 0;
-      font-size: 24px;
-      color: #ff4444;
+    .honorowi {
+      border: 2px solid #ffd700;
+      box-shadow: 0 0 20px rgba(255,215,0,0.4);
     }
 
-    .logo-wrapper {
-      flex: 0 0 auto;
+    .sekcja-tytul {
+      background: linear-gradient(135deg, #444 0%, #222 100%);
+      color: #ffdd44;
+      padding: 14px 20px;
+      margin: 0;
+      font-size: 22px;
       text-align: center;
-      min-width: 250px;
-      margin: 0 40px;
-    }
-
-    h1 {
-      color: red;
-      text-shadow: 2px 2px 5px black;
-      margin: 10px 0;
-      font-size: 48px;
-    }
-
-    img {
-      width: 250px;
+      text-shadow: 1px 1px 3px black;
+      border-bottom: 2px solid #ffd700;
     }
 
     table {
-      background: rgba(30, 30, 30, 0.9);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #444;
-      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+      width: 100%;
+      border-collapse: collapse;
     }
 
     td {
-      padding: 14px 24px;
-      border-bottom: 1px solid #333;
+      padding: 14px 20px;
+      border-bottom: 1px solid #ccc;
     }
 
-    tr:first-child {
-      background: #222;
-      color: #ff6666;
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr th, tr td:first-child {
       font-weight: bold;
+      color: #d00000;
     }
 
     tr:hover {
-      background: #2a2a2a;
+      background: rgba(220,220,255,0.4);
     }
 
-    tr a {
-      color: white;
-      text-decoration: none;
-      display: block;
+    .logo-wrapper {
+      text-align: center;
+      min-width: 280px;
     }
 
-    tr a:hover { color: #ff4444; }
+    h1 {
+      color: #ff4444;
+      text-shadow: 3px 3px 8px black;
+      margin: 15px 0 5px;
+      font-size: 52px;
+    }
 
+    img {
+      width: 260px;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.7));
+    }
+
+    /* KAFELEK – tylko jeden, video od razu widoczne */
     .kafelki {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 0 auto 60px;
     }
 
     .kafel {
-      width: 350px;
-      height: 150px;
+      width: 520px;
+      height: 380px;
       position: relative;
-      cursor: pointer;
       overflow: hidden;
-      background: #111;
-      border: 2px solid red;
-      transition: height 0.5s, background 0.2s;
+      background: #000;
+      border: 3px solid #c80000;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(200,0,0,0.4);
+      transition: all 0.4s ease;
       text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .kafel .tekst {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 28px;
-      font-weight: bold;
-      z-index: 2;
-      text-shadow: 0 0 5px black;
+      color: white;
     }
 
     .kafel video {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.4s;
+      opacity: 1;
+    }
+
+    .kafel .tekst {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: bold;
+      text-shadow: 3px 3px 12px black;
+      background: rgba(0,0,0,0.35);
+      z-index: 2;
+      transition: opacity 0.5s;
+      pointer-events: none;
     }
 
     .kafel:hover {
-      background: transparent;
-      height: 350px;
+      transform: scale(1.04);
+      box-shadow: 0 15px 40px rgba(200,0,0,0.7);
     }
 
-    .kafel:hover video { opacity: 1; }
-    .kafel:hover .tekst { display: none; }
+    .kafel:hover .tekst {
+      opacity: 0;
+    }
 
-    /* responsywność – żeby na telefonie nie rozwalało */
-    @media (max-width: 800px) {
+    /* reset video po najechaniu – odtwarza od nowa */
+    .kafel:hover video {
+      opacity: 0;
+      animation: none;
+    }
+
+    .kafel:hover video {
+      animation: restart 0.01s forwards;
+    }
+
+    @keyframes restart {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
       .header { flex-direction: column; align-items: center; }
-      .czlonkowie { width: 100%; text-align: center; }
-      .logo-wrapper { margin: 20px 0; }
+      .czlonkowie, .honorowi { width: 100%; max-width: 500px; }
+      .kafel { width: 90vw; height: 280px; }
+      .kafel .tekst { font-size: 32px; }
+      h1 { font-size: 42px; }
     }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <div class="czlonkowie">
-      <h2>Członkowie klanu</h2>
+    <div class="honorowi">
+      <h2 class="sekcja-tytul">Honorowi Członkowie Klanu</h2>
       <table>
-        <tr><td>Nick</td><td>Rola</td></tr>
-        <tr><td><a href="77Waldek.html">77Waldek</a></td><td>Lider</td></tr>
-        <tr><td><a href="HusarGP.html">HusarGP</a></td><td>Zastępca</td></tr>
-        <tr><td>-</td><td>-</td></tr>
-        <tr><td>-</td><td>-</td></tr>
-        <tr><td>-</td><td>-</td></tr>
-        <tr><td>-</td><td>-</td></tr>
-        <tr><td>-</td><td>-</td></tr>
+        <tr><td>NatanCard</td><td>Honorowy Lis</td></tr>
       </table>
     </div>
 
     <div class="logo-wrapper">
       <img src="LOGO ZCL.png" alt="Logo ZCL">
       <h1>Witaj w klanie!</h1>
+    </div>
+
+    <div class="czlonkowie">
+      <h2 class="sekcja-tytul">Członkowie klanu</h2>
+      <table>
+        <tr><td>Nick</td><td>Rola</td></tr>
+        <tr><td><a href="77Waldek.html">77Waldek</a></td><td>Lider</td></tr>
+        <tr><td><a href="HusarGP.html">HusarGP</a></td><td>Zastępca</td></tr>
+        <tr><td>-</td><td>-</td></tr>
+        <tr><td>-</td><td>-</td></tr>
+      </table>
     </div>
   </div>
 
@@ -176,18 +214,6 @@
       <span class="tekst">World of Tanks Blitz</span>
       <video autoplay loop muted playsinline>
         <source src="BLITZ2.mp4" type="video/mp4">
-      </video>
-    </a>
-    <a href="lol.html" class="kafel">
-      <span class="tekst">League of Legends</span>
-      <video autoplay loop muted playsinline>
-        <source src="LOL3.mp4" type="video/mp4">
-      </video>
-    </a>
-    <a href="pubg.html" class="kafel">
-      <span class="tekst">PUBG: Battlegrounds</span>
-      <video autoplay loop muted playsinline>
-        <source src="PUGB1.mp4" type="video/mp4">
       </video>
     </a>
   </div>
