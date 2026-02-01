@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <title>ZCL – Załoga Cwanych Lisów | World of Tanks Blitz</title>
+  <title>Załoga Cwanych Lisów</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -21,79 +21,70 @@
       overflow-x: hidden;
     }
 
-    /* Neonowy nagłówek */
     .clan-header {
       text-align: center;
-      padding: 50px 20px 30px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+      padding: 80px 20px 140px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent);
     }
-
     .neon-title {
-      font-size: 3.8rem;
+      font-size: 4.8rem;
       font-weight: bold;
       margin: 0;
-      text-shadow: 
-        0 0 7px #ff004d,
-        0 0 10px #ff004d,
-        0 0 21px #ff004d,
-        0 0 42px #ff00de,
-        0 0 82px #ff00de,
-        0 0 92px #ff00de,
-        0 0 102px #ff00de,
-        0 0 151px #ff00de;
-      letter-spacing: 3px;
-      animation: neon-glow 1.8s ease-in-out infinite alternate;
+      color: #ff7700;
+      text-shadow:
+        0 0 10px #ff7700,
+        0 0 20px #ff7700,
+        0 0 40px #ff9900,
+        0 0 80px #ffaa00,
+        0 0 120px #ffbb00,
+        0 0 160px #ffcc00;
+      letter-spacing: 5px;
+      animation: neon-pulse 2.8s ease-in-out infinite alternate;
+    }
+    @keyframes neon-pulse {
+      from {
+        text-shadow:
+          0 0 10px #ff7700,
+          0 0 20px #ff7700,
+          0 0 40px #ff9900,
+          0 0 80px #ffaa00;
+        opacity: 0.92;
+      }
+      to {
+        text-shadow:
+          0 0 18px #ff8800,
+          0 0 35px #ff9900,
+          0 0 70px #ffaa00,
+          0 0 110px #ffbb00,
+          0 0 150px #ffcc00;
+        opacity: 1;
+      }
     }
 
-    .neon-title .polish {
-      color: #ff004d;
-    }
-
-    .neon-title .english {
-      color: #00f0ff;
-      font-size: 2.4rem;
-      display: block;
-      margin-top: 8px;
-    }
-
-    .tag {
-      margin-top: 12px;
-      font-size: 1.5rem;
-      color: #ff9999;
-      text-shadow: 0 0 12px #ff4444;
-    }
-
-    @keyframes neon-glow {
-      from { text-shadow: 0 0 5px #ff004d, 0 0 10px #ff004d, 0 0 20px #ff004d, 0 0 40px #ff00de, 0 0 80px #ff00de; }
-      to   { text-shadow: 0 0 10px #ff004d, 0 0 20px #ff004d, 0 0 30px #ff004d, 0 0 60px #ff00de, 0 0 100px #ff00de; }
-    }
-
-    /* Kontener z boxami po bokach */
     .container {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: flex-start;
-      flex-wrap: wrap;
-      padding: 0 40px 60px;
+      padding: 0 40px 80px;
+      margin-top: -120px;
       gap: 30px;
+      flex-wrap: wrap;
     }
-
     .box {
-      background: rgba(20,20,20,0.88);
-      border-radius: 12px;
-      padding: 28px;
-      box-shadow: 0 0 20px rgba(220,20,20,0.45);
-      backdrop-filter: blur(4px);
+      background: rgba(20,20,20,0.93);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 0 28px rgba(255,120,0,0.55);
+      backdrop-filter: blur(6px);
       width: 100%;
-      max-width: 420px;
-      border: 1px solid rgba(255, 68, 68, 0.2);
+      max-width: 440px;
+      border: 1px solid rgba(255, 140, 0, 0.45);
     }
-
     h2 {
-      margin: 0 0 20px;
+      margin: 0 0 22px;
       font-size: 28px;
-      color: #ff4444;
-      text-shadow: 0 1px 5px #000;
+      color: #ff8800;
+      text-shadow: 0 1px 6px #000;
     }
 
     table {
@@ -101,18 +92,15 @@
       border-collapse: collapse;
       font-size: 16px;
     }
-
     td {
       padding: 12px 8px;
       border-bottom: 1px solid #444;
     }
-
     td:first-child {
       font-weight: bold;
-      color: #ff9999;
+      color: #ffcc99;
       width: 55%;
     }
-
     tr:last-child td { border-bottom: none; }
 
     p {
@@ -120,84 +108,60 @@
       line-height: 1.6;
       font-size: 15px;
     }
-
     ul {
       margin: 12px 0 24px 20px;
       padding-left: 0;
       list-style: none;
     }
-
     ul li {
       margin: 10px 0;
       padding-left: 32px;
       position: relative;
     }
-
     ul li::before {
       content: "⚡";
       position: absolute;
       left: 4px;
-      color: #ff4444;
-      font-size: 1.2em;
+      color: #ff8800;
+      font-size: 1.3em;
     }
 
-    /* Przycisk Discord */
     .discord-btn {
       display: inline-block;
-      background: linear-gradient(135deg, #7289da, #5865f2);
+      background: linear-gradient(135deg, #ff7700, #ffaa00);
       color: white;
-      padding: 14px 32px;
-      font-size: 1.2em;
+      padding: 15px 36px;
+      font-size: 1.25em;
       font-weight: bold;
       border-radius: 50px;
       text-decoration: none;
-      box-shadow: 0 0 20px rgba(88, 101, 242, 0.7);
+      box-shadow: 0 0 28px rgba(255,120,0,0.85);
       transition: all 0.3s;
     }
-
     .discord-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 30px rgba(88, 101, 242, 0.9);
+      transform: translateY(-5px) scale(1.06);
+      box-shadow: 0 0 45px rgba(255,140,0,1);
     }
 
-    /* Responsywność */
     @media (max-width: 950px) {
       .container {
         justify-content: center;
         padding: 20px;
+        margin-top: -60px;
       }
-      .box {
-        max-width: 90%;
-      }
-      .neon-title {
-        font-size: 3rem;
-      }
-      .neon-title .english {
-        font-size: 2rem;
-      }
+      .box { max-width: 92%; }
+      .neon-title { font-size: 3.8rem; }
     }
-
     @media (max-width: 600px) {
-      .neon-title {
-        font-size: 2.4rem;
-      }
-      .neon-title .english {
-        font-size: 1.6rem;
-      }
-      .clan-header {
-        padding: 40px 15px 20px;
-      }
+      .neon-title { font-size: 3rem; }
+      .clan-header { padding: 60px 15px 120px; }
+      .container { margin-top: -40px; }
     }
   </style>
 </head>
 <body>
-
   <div class="clan-header">
-    <h1 class="neon-title">
-      <span class="polish">Załoga Cwanych Lisów</span>
-      <span class="english">Crew of Cunning Foxes</span>
-    </h1>
-    <p class="tag">ZCL – World of Tanks Blitz 😈</p>
+    <h1 class="neon-title">Załoga Cwanych Lisów</h1>
   </div>
 
   <div class="container">
@@ -206,43 +170,41 @@
       <table>
         <tr><td>77Waldek</td><td>Lider</td></tr>
         <tr><td>HusarGP</td><td>Zastępca</td></tr>
-        <!-- dodawaj kolejne linie w miarę jak rośniesz -->
       </table>
     </div>
 
     <div class="box opis">
-      <h2>Dołącz do ZCL! 🚀</h2>
+      <h2>Clan in Game: Załoga Cwanych Lisów ^^</h2>
       <p style="font-size: 1.1em; line-height: 1.7; margin-bottom: 24px;">
         <strong>Witaj!</strong><br>
         Potrzebujemy graczy do naszego klanu 😈
       </p>
-     
+    
       <p>Nie wymagamy wiele:</p>
       <ul>
         <li>Wystarczy, że będziesz wbijał punkty w misjach klanowych</li>
         <li>Jak na razie nie wyrzucamy za brak aktywności</li>
-        <li>Mamy mały personel – możesz być spokojny, jeśli akurat nie będziesz miał czasu</li>
+        <li>Mamy mały personel – możesz być spokojny</li>
         <li>Najważniejsza jest miła atmosfera</li>
       </ul>
-     
-      <p style="font-weight: bold; color: #ff9999; font-size: 1.1em;">
+    
+      <p style="font-weight: bold; color: #ffcc99; font-size: 1.15em; text-align: center; margin: 20px 0;">
         Gram dla frajdy, nie na siłę – wpadaj śmiało!
       </p>
 
-      <div style="text-align: center; margin: 35px 0 20px;">
+      <div style="text-align: center; margin: 45px 0 25px;">
         <a href="https://discord.gg/5MNZZfh5" target="_blank" class="discord-btn">
           Dołącz na Discordzie 🐺
         </a>
-        <p style="margin-top: 14px; font-size: 0.95em; color: #bbbbff;">
-          Najlepsze miejsce na pogaduchy, screeny i rekrutację!
+        <p style="margin-top: 16px; font-size: 0.95em; color: #bbbbff;">
+          Pogaduchy, screeny i rekrutacja – tu się dzieje!
         </p>
       </div>
-     
-      <p style="margin-top: 20px; text-align: center; font-size: 1.05em;">
+    
+      <p style="margin-top: 25px; text-align: center; font-size: 1.05em;">
         Kontakt: Discord /77Waldek<br>lub wiadomość w grze
       </p>
     </div>
   </div>
-
 </body>
 </html>
