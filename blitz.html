@@ -76,14 +76,8 @@
       box-shadow: 0 0 28px rgba(255,120,0,0.55);
       backdrop-filter: blur(6px);
       width: 100%;
-      max-width: 420px;
+      max-width: 480px;
       border: 1px solid rgba(255, 140, 0, 0.45);
-    }
-    .czlonkowie {
-      margin-left: 0;
-    }
-    .opis {
-      margin-right: 0;
     }
     h2 {
       margin: 0 0 22px;
@@ -94,16 +88,30 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 16px;
+      font-size: 15px;
     }
-    td {
-      padding: 12px 8px;
+    th, td {
+      padding: 10px 8px;
       border-bottom: 1px solid #444;
+      text-align: left;
+    }
+    th {
+      color: #ffaa00;
+      font-weight: bold;
     }
     td:first-child {
       font-weight: bold;
       color: #ffcc99;
-      width: 55%;
+      width: 38%;
+    }
+    td:nth-child(2) {
+      width: 32%;
+      color: #ddd;
+    }
+    td:nth-child(3) {
+      width: 30%;
+      color: #aaffcc;
+      font-weight: 500;
     }
     tr:last-child td { border-bottom: none; }
     p {
@@ -144,6 +152,12 @@
       transform: translateY(-5px) scale(1.06);
       box-shadow: 0 0 45px rgba(255,140,0,1);
     }
+    .small-note {
+      font-size: 0.85em;
+      color: #aaa;
+      text-align: center;
+      margin-top: 18px;
+    }
     @media (max-width: 950px) {
       .container {
         justify-content: center;
@@ -154,16 +168,13 @@
         max-width: 90%;
         margin: 0 auto 30px;
       }
-      .czlonkowie, .opis {
-        margin-left: auto;
-        margin-right: auto;
-      }
       .neon-title { font-size: 3.8rem; }
     }
     @media (max-width: 600px) {
       .neon-title { font-size: 3rem; }
       .clan-header { padding: 60px 15px 120px; }
       .container { margin-top: -40px; }
+      table { font-size: 14px; }
     }
   </style>
 </head>
@@ -171,27 +182,41 @@
   <div class="clan-header">
     <h1 class="neon-title">Załoga Cwanych Lisów</h1>
   </div>
+
   <div class="container">
-    <div class="box czlonkowie">
+    <div class="box">
       <h2>Członkowie</h2>
       <table>
-        <tr><td>77Waldek</td><td>Lider</td></tr>
-        <tr><td>HusarGP</td><td>Zastępca</td></tr>
-        <tr><td>NatanCard</td><td>Honorowy Lis</td></tr>
-        <tr><td>Sawatatrik</td><td>PanzerFox</td></tr>
-        <tr><td>PREZEStoJA</td><td>PanzerFox</td></tr>
-        <tr><td>Kgorska373</td><td>PanzerFox</td></tr>
-        <tr><td>Toblet_Sigma</td><td>PanzerFox</td></tr>
+        <thead>
+          <tr>
+            <th>Gracz</th>
+            <th>Rola</th>
+            <th>Top tank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CEWaldek</td><td>Lider</td><td>Obj. 907 / Leopard 1</td></tr>
+          <tr><td>Husar_2020</td><td>Zastępca</td><td>T110E5 / IS-7</td></tr>
+          <tr><td>NatanCard</td><td>Honorowy Lis</td><td>121B / CS-63</td></tr>
+          <tr><td>Sawatatrik</td><td>PanzerFox</td><td>AMX 13 105 / Sheridan</td></tr>
+          <tr><td>PREZEStoJA</td><td>PanzerFox</td><td>T57 Heavy / Badger</td></tr>
+          <tr><td>Kgorska373</td><td>PanzerFox</td><td>E 100 / Maus</td></tr>
+          <tr><td>Toblet_Sigma</td><td>PanzerFox</td><td>Progetto 65 / TVP T 50/51</td></tr>
+        </tbody>
       </table>
+      <div class="small-note">
+        Top tanki – ulubione / najlepsze maszyny graczy (stan na luty 2026)<br>
+        Wartości możesz w każdej chwili zmienić w kodzie HTML
+      </div>
     </div>
 
-    <div class="box opis">
+    <div class="box">
       <h2>Clan in Game: Załoga Cwanych Lisów ^^</h2>
       <p style="font-size: 1.1em; line-height: 1.7; margin-bottom: 24px;">
         <strong>Witaj!</strong><br>
         Potrzebujemy graczy do naszego klanu 😈
       </p>
-   
+
       <p>Nie wymagamy wiele:</p>
       <ul>
         <li>Wystarczy, że będziesz wbijał punkty w misjach klanowych</li>
@@ -199,10 +224,11 @@
         <li>Mamy mały personel – możesz być spokojny</li>
         <li>Najważniejsza jest miła atmosfera</li>
       </ul>
-   
+
       <p style="font-weight: bold; color: #ffcc99; font-size: 1.15em; text-align: center; margin: 20px 0;">
         Gram dla frajdy, nie na siłę – wpadaj śmiało!
       </p>
+
       <div style="text-align: center; margin: 45px 0 25px;">
         <a href="https://discord.gg/5MNZZfh5" target="_blank" class="discord-btn">
           Dołącz na Discordzie 🐺
@@ -211,9 +237,9 @@
           Pogaduchy, screeny i rekrutacja – tu się dzieje!
         </p>
       </div>
-   
+
       <p style="margin-top: 25px; text-align: center; font-size: 1.05em;">
-        Kontakt: Discord /77Waldek<br>lub wiadomość w grze
+        Kontakt: Discord / CEWaldek<br>lub wiadomość w grze
       </p>
     </div>
   </div>
