@@ -76,7 +76,7 @@
       box-shadow: 0 0 28px rgba(255,120,0,0.55);
       backdrop-filter: blur(6px);
       width: 100%;
-      max-width: 480px;
+      max-width: 520px;
       border: 1px solid rgba(255, 140, 0, 0.45);
     }
     h2 {
@@ -88,10 +88,11 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 15px;
+      font-size: 14.5px;
+      margin-bottom: 20px;
     }
     th, td {
-      padding: 10px 8px;
+      padding: 9px 8px;
       border-bottom: 1px solid #444;
       text-align: left;
     }
@@ -102,18 +103,50 @@
     td:first-child {
       font-weight: bold;
       color: #ffcc99;
-      width: 38%;
-    }
-    td:nth-child(2) {
-      width: 32%;
-      color: #ddd;
-    }
-    td:nth-child(3) {
       width: 30%;
-      color: #aaffcc;
-      font-weight: 500;
     }
+    td:nth-child(2) { width: 24%; color: #ddd; }
+    td:nth-child(3) { width: 24%; color: #aaffcc; }
+    td:nth-child(4) { width: 22%; color: #88ffdd; font-weight: 500; }
     tr:last-child td { border-bottom: none; }
+    .progress-bar {
+      background: #333;
+      height: 10px;
+      border-radius: 5px;
+      margin-top: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ff7700, #ffaa00);
+      transition: width 0.6s ease;
+    }
+    .blitzstars-btn {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 20px auto 10px;
+      padding: 14px 24px;
+      font-size: 1.15em;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #aa00ff, #7700ff);
+      border-radius: 50px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 0 24px rgba(170,0,255,0.6);
+      transition: all 0.3s;
+    }
+    .blitzstars-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 40px rgba(170,0,255,0.9);
+    }
+    .small-note {
+      font-size: 0.85em;
+      color: #aaa;
+      text-align: center;
+      margin-top: 12px;
+    }
     p {
       margin: 0 0 16px;
       line-height: 1.6;
@@ -152,12 +185,6 @@
       transform: translateY(-5px) scale(1.06);
       box-shadow: 0 0 45px rgba(255,140,0,1);
     }
-    .small-note {
-      font-size: 0.85em;
-      color: #aaa;
-      text-align: center;
-      margin-top: 18px;
-    }
     @media (max-width: 950px) {
       .container {
         justify-content: center;
@@ -174,7 +201,7 @@
       .neon-title { font-size: 3rem; }
       .clan-header { padding: 60px 15px 120px; }
       .container { margin-top: -40px; }
-      table { font-size: 14px; }
+      table { font-size: 13.5px; }
     }
   </style>
 </head>
@@ -192,21 +219,76 @@
             <th>Gracz</th>
             <th>Rola</th>
             <th>Top tank</th>
+            <th>Progres misji</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>CEWaldek</td><td>Lider</td><td>Obj. 907 / Leopard 1</td></tr>
-          <tr><td>Husar_2020</td><td>Zastępca</td><td>T110E5 / IS-7</td></tr>
-          <tr><td>NatanCard</td><td>Honorowy Lis</td><td>121B / CS-63</td></tr>
-          <tr><td>Sawatatrik</td><td>PanzerFox</td><td>AMX 13 105 / Sheridan</td></tr>
-          <tr><td>PREZEStoJA</td><td>PanzerFox</td><td>T57 Heavy / Badger</td></tr>
-          <tr><td>Kgorska373</td><td>PanzerFox</td><td>E 100 / Maus</td></tr>
-          <tr><td>Toblet_Sigma</td><td>PanzerFox</td><td>Progetto 65 / TVP T 50/51</td></tr>
+          <tr>
+            <td>CEWaldek</td>
+            <td>Lider</td>
+            <td>Obj. 907 / Leopard 1</td>
+            <td>82%
+              <div class="progress-bar"><div class="progress-fill" style="width:82%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Husar_2020</td>
+            <td>Zastępca</td>
+            <td>T110E5 / IS-7</td>
+            <td>71%
+              <div class="progress-bar"><div class="progress-fill" style="width:71%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>NatanCard</td>
+            <td>Honorowy Lis</td>
+            <td>121B / CS-63</td>
+            <td>58%
+              <div class="progress-bar"><div class="progress-fill" style="width:58%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Sawatatrik</td>
+            <td>PanzerFox</td>
+            <td>AMX 13 105 / Sheridan</td>
+            <td>94%
+              <div class="progress-bar"><div class="progress-fill" style="width:94%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>PREZEStoJA</td>
+            <td>PanzerFox</td>
+            <td>T57 Heavy / Badger</td>
+            <td>49%
+              <div class="progress-bar"><div class="progress-fill" style="width:49%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Kgorska373</td>
+            <td>PanzerFox</td>
+            <td>E 100 / Maus</td>
+            <td>33%
+              <div class="progress-bar"><div class="progress-fill" style="width:33%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Toblet_Sigma</td>
+            <td>PanzerFox</td>
+            <td>Progetto 65 / TVP T 50/51</td>
+            <td>67%
+              <div class="progress-bar"><div class="progress-fill" style="width:67%"></div></div>
+            </td>
+          </tr>
         </tbody>
       </table>
+
+      <a href="https://www.blitzstars.com/clan/eu/156853" target="_blank" class="blitzstars-btn">
+        📊 Statystyki klanu LIVE – BlitzStars
+      </a>
+
       <div class="small-note">
-        Top tanki – ulubione / najlepsze maszyny graczy (stan na luty 2026)<br>
-        Wartości możesz w każdej chwili zmienić w kodzie HTML
+        Progres misji – stan na luty 2026 • aktualizuj ręcznie w kodzie<br>
+        Kliknij przycisk powyżej, aby zobaczyć pełne dane klanu
       </div>
     </div>
 
